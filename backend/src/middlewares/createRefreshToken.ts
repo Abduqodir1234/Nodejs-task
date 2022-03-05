@@ -1,15 +1,12 @@
-import { SessionDocument } from "@models/session";
-import { UserDocument } from "@models/users";
 import jwt from "jsonwebtoken"
-import { configs } from "src/config";
-// import {ACCESS_TOKEN_SECRET, REFRESH_TOKEN_EXPIRED_DURATION} from "./Variables";
+const token_secret = process.env.TOKEN_SECRET || ''
 
-let createRefreshToken =async (userId:any,sessionId:any) => {
+let createRefreshToken =async (user:any,session:any) => {
     try{
         const access_token = await jwt.sign(
-            { user: userId,session:sessionId },
-            configs.jwtconfigs.token_secret,
-            { expiresIn: configs.jwtconfigs.refresh_validity }
+            { user: user,session:session },
+            token_secret,
+            { expiresIn: process.env.REFRESH_VALIDITY }
           );
           return access_token;
     }

@@ -1,10 +1,9 @@
 import jwt from "jsonwebtoken";
-import { configs } from "src/config";
-
+const token_secret = process.env.TOKEN_SECRET || ''
 
 let Decode= async (token:string)=>{
     try{
-       let decoded = await jwt.verify(token,configs.jwtconfigs.token_secret);
+       let decoded = await jwt.verify(token,token_secret);
        return {valid:true,expired:false,decoded};
     }
     catch(e:any){
