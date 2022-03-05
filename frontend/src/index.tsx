@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import 'antd/dist/antd.css'; 
 import "./public/statics/index.css"
+import 'quill/dist/quill.snow.css';
 import reportWebVitals from './reportWebVitals';
 import {QueryClient,QueryClientProvider} from 'react-query'
 import {ReactQueryDevtools} from 'react-query/devtools'
