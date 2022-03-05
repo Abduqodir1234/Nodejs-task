@@ -11,7 +11,7 @@ const MyBlogItem = lazy(()=>import('./pages/my-blogs/item'))
 const BlogCreate  = lazy(()=>import('./pages/my-blogs/create'))
 
 function App() {
-  axios.defaults.baseURL = 'http://localhost:5000/api/v1'
+  axios.defaults.baseURL = 'https://welbex-nodejs.herokuapp.com/api/v1'
   // axios.defaults.headers.common["Authorization"] = `Bearer ${localStorage.getItem('access_token')}`
   // axios.defaults.headers.common["refresh"] = `${localStorage.getItem('refresh_token')}`
   return (
